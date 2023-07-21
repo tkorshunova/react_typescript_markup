@@ -1,0 +1,17 @@
+@import "../../styles/variables.scss";
+
+.list {
+    font-size: 14px;
+    color: $text-primary;
+
+    li {
+        display: flex;
+        align-items: center;
+        padding: 6px 0;
+    }
+}
+
+.icon {
+    width: 16px;
+    height: 16px;
+}

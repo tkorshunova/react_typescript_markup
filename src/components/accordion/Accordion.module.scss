@@ -1,0 +1,91 @@
+@import "../../styles/variables.scss";
+
+.container {
+    margin-top: 30px;
+}
+
+.itemContainer {
+    position: relative;
+
+    &:not(:last-child) {
+        margin-bottom: 45px;
+    }
+
+    &::after {
+        content: url("../../images/line.svg");
+        position: absolute;
+        bottom: -40px;
+        left: 14px;
+    }
+
+    &:last-child::after { 
+        content: ''; 
+    }
+}
+
+.stepContainer{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    position: relative;
+
+    .numberHolder {
+        width: 28px;
+        height: 28px;
+        padding: 5px 2px 2px;
+        border-radius: 50%;
+        background-color: $text-primary;
+        color: $white;
+        font-size: 16px;
+        font-weight: 700;
+        text-align: center;
+        margin-right: 10px;
+        transition: background-color .5s;
+    }
+
+    .step {
+        color: $white;
+        font-size: 16px;
+        color: $text-primary;
+        text-align: left;
+    }
+}
+
+.active {
+    .numberHolder {
+        background-color: $green;
+    }
+
+    .step {
+        color: $green;
+    }
+
+    .content {
+        visibility: visible;
+        opacity: 1;
+    }
+}
+
+.content {
+    position: absolute;
+    left: 38px;
+    top: 40px;
+    font-size: 14px;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity .5s;
+}
+
+.iconHolder {
+    width: 14px;
+    height: 14px;
+    background-image: url("../../images/arrow_down.svg");
+    background-repeat: no-repeat;
+    background-position-y: center;
+    margin-left: auto;
+
+    &.activeIcon {
+        background-image: url("../../images/arrow_up.svg");
+    }
+}
+

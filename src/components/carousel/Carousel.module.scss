@@ -1,0 +1,79 @@
+@import "../../styles/variables.scss";
+
+.container {
+    position: relative;
+}
+
+.caruselContainer {
+    display: flex;
+    gap: 12px;
+    position: absolute;
+
+    .item {
+        width: 272px;
+        height: 339px;
+        border-radius: 20px;
+        padding: 40px 24px;
+        background-color: $primary-light;
+        display: flex;
+        flex-direction: column;
+
+        .logoHolder {
+            margin-bottom: 30px;
+        }
+
+        .author {
+            margin-top: auto;
+        }
+    }
+    
+    :global(.trustpilot) {
+        background-color: $primary-light;
+        color: $text-violet;
+    }
+    
+    :global(.googleplay) {
+        background-color: $green-light;
+        color: $text-green;
+    }
+    
+    :global(.appstore) {
+            background-color: $blue-light;
+            color: $text-blue;
+    }
+}
+
+.buttons {
+    position: absolute;
+    top: 315px;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+
+.btn {
+    width: 48px;
+    height: 48px;
+    box-shadow: 0 3px 17px rgba(96, 148, 227, 0.21);
+    background-color: $white;
+    border-radius: 50%;
+    background-image: url("../../images/arrow_down.svg");
+    background-repeat: no-repeat;
+    background-position-y: center;
+    background-position-x: center;
+    margin-left: auto;
+    display: inline-block;
+    cursor: pointer;
+    
+    &.right {
+        transform: rotate(-90deg);
+    }
+
+    &.left {
+        transform: rotate(90deg);
+        margin-right: 5px;
+    }
+
+    :disabled {
+        background-color: black;
+    }
+}

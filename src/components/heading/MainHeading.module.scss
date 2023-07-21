@@ -1,0 +1,14 @@
+@import "../../styles/variables.scss";
+
+.mainHeading {
+    font-size: 36px;
+    font-weight: 700;
+    text-align: center;
+    color: $text-primary;
+    margin: 30px 0 10px 0;
+    line-height: 1.1em;
+
+    span {
+        color: $text-highlighted;
+    }
+}

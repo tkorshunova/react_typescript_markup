@@ -1,0 +1,9 @@
+@import "../../styles/variables.scss";
+
+.section {
+    width: 100%;
+    padding: 20px 24px 50px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}

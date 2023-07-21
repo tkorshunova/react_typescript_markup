@@ -1,25 +1,39 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+
+import { StickyHeader } from './components/stickyHeader/StickyHeader';
+import { Header } from './components/header/Header';
+import Intro from './components/intro/Intro';
+import Features from './components/features/Features';
+import Team from './components/team/Team';
+import Setup from './components/setup/Setup';
+import Promo from './components/promo/Promo';
+import Security from './components/security/Security';
+import Reviews from './components/reviews/Reviews';
+import Outro from './components/outro/Outro';
+import Footer from './components/footer/Footer';
+
+import styles from './styles/Home.module.scss';
+import './styles/global.scss';
+import Layout from './components/layout/Layout';
 
 function App() {
+  const [isSticky, setIsSticky] = useState(false);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Layout>
+      <main className={styles.main}>
+        {!isSticky ? <StickyHeader /> : <Header />}
+        <Intro changeHeader={(v:boolean)=>setIsSticky(v)}/>
+        <Features />
+        <Team />
+        <Setup />
+        <Promo />
+        <Security />
+        <Reviews />
+        <Outro />
+        <Footer />
+      </main>
+    </Layout>
   );
 }
 

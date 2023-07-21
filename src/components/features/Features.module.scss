@@ -1,0 +1,19 @@
+.card {
+    margin-bottom: 20px;
+
+    img {
+        margin-bottom: 15px;
+    }
+
+    .textHolder {
+        margin-bottom: 15px;
+    }
+}
+
+.headingHolder {
+    margin-bottom: 30px;
+}
+
+.card:last-child {
+    margin-bottom: 0;
+}
